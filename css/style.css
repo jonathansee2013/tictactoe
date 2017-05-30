@@ -1,0 +1,91 @@
+
+body {
+  background-color: #AA9FB1;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+}
+
+header {
+  background-color: #4E5283;
+  margin: 0;
+  padding: 30px;
+  font-size: 60px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-weight: 600;
+}
+
+article {
+  background-color: #7871AA;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  padding: 30px;
+  width: 41%;
+}
+
+article p {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+/*.column {
+  width: 33%;
+  display: inline-block;
+  border: 2px solid red;
+  box-sizing: border-box;
+}*/
+
+.column {
+  display: inline-block;
+  /*border: 2px solid red;*/
+  box-sizing: border-box;
+  /*float:left;*/
+  width: 33%;
+  vertical-align: top;
+}
+
+.board {
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  letter-spacing: 3px;
+ }
+
+
+table, td, tr {
+  border: 3px solid black;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td {
+  height: 150px;
+  width: 150px;
+  font-size: 70px;
+}
+
+#reset {
+  font-family: 'Roboto Slab', serif;
+  font: 50px;
+  background-color: purple;
+  width: 100px;
+  margin: auto;
+}
+
+#reset:hover{
+  cursor: pointer;
+  /*padding: 20px;*/
+}
+
+footer {
+  background-color: #CCA7A2;
+  padding: 30px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+}

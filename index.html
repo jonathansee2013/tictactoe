@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Tic Tac Toe</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+
+</head>
+
+<body>
+
+  <header>Tic Tac Toe</header>
+
+  <div>
+    <div class="column">
+      <article>
+        <h1>Rules</h1>
+        <p>The object of the game is to get three in a row. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled.</p>
+      </article>
+    </div>
+
+    <div class="column board">
+      <table>
+        <tr class="row first">
+          <td id="cellOne"></td>
+          <td id="cellTwo"></td>
+          <td id="cellThree"></td>
+        </tr>
+        <tr class="row second">
+          <td id="cellFour"></td>
+          <td id="cellFive" class="diag1"></td>
+          <td id="cellSix"></td>
+        </tr>
+        <tr class="row third">
+          <td id="cellSeven"></td>
+          <td id="cellEight"></td>
+          <td id="cellNine"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="column">
+      <section id="scores">
+        <h1>Scores</h1>
+        <p>Player X</p>
+        <p>Player O</p>
+        <p>Tie</p>
+      </section>
+      <div id="reset">Reset Game</div>
+    </div>
+
+  </div>
+
+  <footer>Copyright 2017</footer>
+
+</body>
+</html>
