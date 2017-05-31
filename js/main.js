@@ -3,6 +3,15 @@ var playerTurn = "X";
 
 var draw = 0;
 
+var numberOfTurns = 0;
+
+var scoreX = 0;
+var scoreO = 0;
+var scoreDraw = 0;
+
+
+var gameOver = false; // to initialise the game (because it's not yet over)
+
 $(document).ready( function () {
 
   var $cellOne = $('#cellOne');
@@ -15,18 +24,9 @@ $(document).ready( function () {
   var $cellEight = $('#cellEight');
   var $cellNine = $('#cellNine');
 
-  var numberOfTurns = 0;
-
-  var scoreX = 0;
-  var scoreO = 0;
-  var scoreDraw = 0;
-
-
-  var gameOver = false; // to initialise the game (because it's not yet over)
-
   var showWin = function (player) {
     $('#winner span').text(player);
-    $('#winner').css('visibility', 'visible');
+    $('#winner').show();
   }
 
   $('td').click( function () {
@@ -156,7 +156,7 @@ $(document).ready( function () {
       }
       return;
 
-    } else if
+    } else if( numberOfTurns === 9) {
       // no winning combo found, so check for draw
 
       /* all boxes are occupied - how to check?
@@ -164,11 +164,9 @@ $(document).ready( function () {
          2. check how many turns have been played
 
       */
-
-      ($('td').length < 0 && numberOfTurns === 9) {
       scoreDraw += 1;
       $('#scoreDraw').text(scoreDraw);
-      $('#winner').text("Nobody wins!")
+      $('#draw').show();
 
     }
 
@@ -179,7 +177,8 @@ $(document).ready( function () {
     $('td').text('');
     $('td').css('backgroundColor', '');
     playerTurn !== "X";
-    $('#winner').css('visibility', 'hidden');
+    $('#winner,#draw').hide();
+    numberOfTurns = 0;
     gameOver = false;
   });
 
