@@ -1,7 +1,7 @@
 
 body {
   background-color: #AA9FB1;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Baloo Bhaina', 'cursive';
   text-align: center;
 }
 
@@ -10,6 +10,7 @@ header {
   margin: 0;
   padding: 30px;
   font-size: 60px;
+  color: white;
   display: block;
   text-transform: uppercase;
   letter-spacing: 10px;
@@ -18,15 +19,20 @@ header {
 
 article {
   background-color: #7871AA;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Baloo Bhaina', 'cursive';
+  color: white;
   text-align: center;
   padding: 30px;
   width: 41%;
 }
 
+article h1 {
+  padding-top: 15px;
+}
+
 article p {
-  font-size: 20px;
-  letter-spacing: 2px;
+  font-size: 22px;
+  letter-spacing: 1px;
 }
 
 /*.column {
@@ -46,36 +52,52 @@ article p {
 }
 
 .board {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 50px;
   letter-spacing: 3px;
  }
 
-
-table, td, tr {
-  border: 3px solid black;
-}
-
 table {
   margin: auto;
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
 }
 
 td {
   height: 150px;
   width: 150px;
+  font-family: 'Baloo Bhaina', 'cursive';
   font-size: 70px;
+  border: 3px solid white;
+  border-radius: 25px;
+  background-color: white;
+}
+
+td:hover {
+  background-color: #B3CBB9;
+}
+
+#winner {
+  visibility: hidden;
+  color: white;
+}
+
+.playerScores {
+  font-size: 30px;
+  font: white;
 }
 
 #reset {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Baloo Bhaina', 'cursive';
   font: 50px;
-  background-color: purple;
-  width: 100px;
+  font-size: 30px;
+  color: white;
+  background-color: #6D72C3;
+  width: 200px;
   margin: auto;
+  border: 1px solid white;
 }
 
 #reset:hover{
@@ -86,6 +108,7 @@ td {
 footer {
   background-color: #CCA7A2;
   padding: 30px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Baloo Bhaina', 'cursive';
   font-size: 20px;
+  color: white;
 }

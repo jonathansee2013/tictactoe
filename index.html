@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet">
 
   <script
   src="https://code.jquery.com/jquery-3.2.1.js"
@@ -27,36 +28,37 @@
     <div class="column">
       <article>
         <h1>Rules</h1>
-        <p>The object of the game is to get three in a row. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled.</p>
+        <p>The object of the game is to get three in a row. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either opponent has three in a row or all nine squares are filled.</p>
       </article>
     </div>
 
     <div class="column board">
       <table>
         <tr class="row first">
-          <td id="cellOne"></td>
+          <td id="cellOne" class="diag1"></td>
           <td id="cellTwo"></td>
-          <td id="cellThree"></td>
+          <td id="cellThree" class="diag2"></td>
         </tr>
         <tr class="row second">
           <td id="cellFour"></td>
-          <td id="cellFive" class="diag1"></td>
+          <td id="cellFive" class="diag1 diag2"></td>
           <td id="cellSix"></td>
         </tr>
         <tr class="row third">
-          <td id="cellSeven"></td>
+          <td id="cellSeven" class="diag2"></td>
           <td id="cellEight"></td>
-          <td id="cellNine"></td>
+          <td id="cellNine" class="diag1"></td>
         </tr>
       </table>
+      <div id="winner">Player <span></span> wins!</div>
     </div>
 
     <div class="column">
       <section id="scores">
         <h1>Scores</h1>
-        <p>Player X</p>
-        <p>Player O</p>
-        <p>Tie</p>
+        <p class="playerScores">Player X = <span id="scoreX"></span></p>
+        <p class="playerScores">Player O = <span id="scoreO"></span></p>
+        <p class="playerScores">Draw = <span id="scoreDraw"></span></p>
       </section>
       <div id="reset">Reset Game</div>
     </div>
