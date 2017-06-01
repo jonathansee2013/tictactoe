@@ -22,14 +22,16 @@
 
 <body>
 
-  <header>Tic Tac Toe</header>
+  <header>DOG vs CAT</header>
 
   <div>
     <div class="column">
-      <article>
-        <h1>Rules</h1>
-        <p>The object of the game is to get three in a row. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either opponent has three in a row or all nine squares are filled.</p>
-      </article>
+      <section class="players">
+        <h1>DOG</h1>
+        <img src="img/DogImage1.jpg" class=playerPic id="dogPic">
+        <p class="playerScores">Score: <span id="scoreX"></span></p>
+
+      </section>
     </div>
 
     <div class="column board">
@@ -50,18 +52,18 @@
           <td id="cellNine" class="diag1"></td>
         </tr>
       </table>
+      <div id="reset">Reset Board</div>
       <div id="winner">Player <span></span> wins!</div>
       <div id="draw">Nobody wins!</div>
     </div>
 
     <div class="column">
-      <section id="scores">
-        <h1>Scores</h1>
-        <p class="playerScores">Player X = <span id="scoreX"></span></p>
-        <p class="playerScores">Player O = <span id="scoreO"></span></p>
+      <section class="players">
+        <h1>CAT</h1>
+        <img src="img/CatImage1.jpg" class=playerPic id="catPic">
+        <p class="playerScores">Score: <span id="scoreO"></span></p>
         <p class="playerScores">Draw = <span id="scoreDraw"></span></p>
       </section>
-      <div id="reset">Reset Game</div>
     </div>
 
   </div>

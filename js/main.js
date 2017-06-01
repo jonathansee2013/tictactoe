@@ -21,9 +21,57 @@ $(document).ready( function () {
   var $cellEight = $('#cellEight');
   var $cellNine = $('#cellNine');
 
+  var dogImages = [
+    "img/DogImage1.jpg",
+    "img/DogImage2.jpg",
+    "img/DogImage3.jpg",
+    "img/DogImage4.jpg",
+    "img/DogImage5.jpg",
+    "img/DogImage6.jpg",
+    "img/DogImage7.jpg",
+    "img/DogImage8.jpg",
+  ];
+
+  var catImages = [
+    "img/CatImage1.jpg",
+    "img/CatImage2.jpg",
+    "img/CatImage3.jpg",
+    "img/CatImage4.jpg",
+    "img/CatImage5.jpg",
+    "img/CatImage6.jpg",
+    "img/CatImage7.jpg",
+    "img/CatImage8.jpg",
+  ];
+
+  var currentDogImageIndex = 0;
+  var currentCatImageIndex = 0;
+
+  $('#dogPic').click( function () {
+    currentDogImageIndex += 1; // adds 1 to the index
+    if (currentDogImageIndex >= dogImages.length) { // until it reaches the last index
+      currentDogImageIndex = 0; // then goes back to first image
+    }
+    // currentDogImageIndex += 1;
+    // currentDogImageIndex = currentDogImageIndex % dogImages.length;
+
+    console.log("click dog: ", currentDogImageIndex);
+    var urlDog = dogImages[currentDogImageIndex]; // sets the chosen dog image
+    $(this).attr('src', urlDog);
+  })
+
+  $("#catPic").click( function () {
+    currentCatImageIndex += 1;
+    if (currentCatImageIndex >= catImages.length) {
+      currentCatImageIndex = 0;
+    }
+    var urlCat = catImages[currentCatImageIndex];
+    $(this).attr('src', urlCat);
+  })
+
   var showWin = function (player) {
     $('#winner span').text(player);
     $('#winner').show();
+  //  $('#playerOnePic').animate({width: '10%'}, 1000);
   }
 
   var checkWinState = function ( firstCell, secondCell, thirdCell, winSelect ) {
@@ -45,6 +93,10 @@ $(document).ready( function () {
     }
   };
 
+  // $('img').click( function () {
+  //   // $(this).
+  // })
+
   $('td').click( function () {
 
     if ( $( this ).text().length || gameOver ) { // If: (1) there is something ("X" or "O") in the box, prevents it from being clicked again; OR (2) game is over, prevents players from clicking or continuing with game.
@@ -52,6 +104,8 @@ $(document).ready( function () {
     }
 
     $( this ).html( playerTurn );
+    $( this ).addClass(playerTurn);
+
     numberOfTurns += 1;
     if ( playerTurn === "X" ) { // if statement to alternate X and O
       playerTurn = "O";
@@ -103,6 +157,7 @@ $(document).ready( function () {
     $('td').css('backgroundColor', '');
     playerTurn !== "X";
     $('#winner,#draw').hide();
+    $('td').removeClass("X O");
     numberOfTurns = 0;
     gameOver = false;
   });

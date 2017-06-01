@@ -1,12 +1,15 @@
+* {
+font-family: 'Arial Black', Gadget, sans-serif;
+text-align: center;
+}
 
 body {
-  background-color: #AA9FB1;
-  font-family: 'Baloo', 'cursive';
+  background-color: white
   text-align: center;
 }
 
 header {
-  background-color: #4E5283;
+  background-color: black;
   margin: 0;
   padding: 30px;
   font-size: 60px;
@@ -17,30 +20,38 @@ header {
   font-weight: 600;
 }
 
-article {
-  background-color: #7871AA;
-  font-family: 'Baloo', 'cursive';
-  color: white;
-  text-align: center;
-  padding: 30px;
-  width: 41%;
+.X {
+  background-image: url(../img/DogBowl.jpg);
+  background-size: cover;
 }
 
-article p {
+.O {
+  background-image: url(../img/DogFood.jpg);
+  background-size: cover;
+}
+
+section {
+  /*background-color: #7871AA;*/
+  color: black;
+  text-align: center;
+  width: auto;
+}
+
+section p {
   font-size: 22px;
   letter-spacing: 1px;
 }
 
-/*.column {
-  width: 33%;
-  display: inline-block;
-  border: 2px solid red;
-  box-sizing: border-box;
-}*/
+img.playerPic {
+  /*visibility: hidden;*/
+}
+
+img.playerPic:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
 
 .column {
   display: inline-block;
-  /*border: 2px solid red;*/
   box-sizing: border-box;
   /*float:left;*/
   width: 33%;
@@ -63,11 +74,10 @@ table {
 }
 
 td {
-  height: 160px;
-  width: 160px;
-  font-family: 'Baloo', 'cursive';
-  font-size: 100px;
-  border: 3px solid white;
+  height: 120px;
+  width: 120px;
+  font-size: 0;
+  border: 10px solid black;
   border-radius: 30px;
   background-color: white;
 }
@@ -78,13 +88,13 @@ td:hover {
 
 #winner, #draw {
   display: none;
-  color: white;
+  color: black;
   font-size: 50px;
   padding-top: 30px;
 }
 
 section {
-  color: white;
+  color: black;
 }
 
 .playerScores {
@@ -92,25 +102,22 @@ section {
 }
 
 #reset {
-  font-family: 'Baloo', 'cursive';
   font: 50px;
   font-size: 30px;
-  color: white;
-  background-color: #6D72C3;
-  width: 200px;
+  color: black;
+  background-color: white;
+  width: 250px;
   margin: auto;
-  border: 1px solid white;
 }
 
 #reset:hover{
   cursor: pointer;
-  /*padding: 20px;*/
+  padding: 20px;
 }
 
 footer {
-  background-color: #CCA7A2;
+  background-color: black;
   padding: 30px;
-  font-family: 'Baloo', 'cursive';
   font-size: 20px;
   color: white;
 }
