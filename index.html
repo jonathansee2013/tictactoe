@@ -22,15 +22,16 @@
 
 <body>
 
-  <header>DOG vs CAT</header>
+  <header>DOG<span id="versus"> vs </span>CAT</header>
 
-  <div>
+  <div class="maincontainer">
     <div class="column">
       <section class="players">
         <h1>DOG</h1>
         <img src="img/DogImage1.jpg" class=playerPic id="dogPic">
-        <p class="playerScores">Score: <span id="scoreX"></span></p>
-
+        <p class="playerScores">Score <span id="scoreX"></span></p>
+        <div id="winnerDog">Winner!</div>
+        <img src="img/DogFood.jpg" class="tokens" id="dogFood">
       </section>
     </div>
 
@@ -53,7 +54,9 @@
         </tr>
       </table>
       <div id="reset">Reset Board</div>
-      <div id="winner">Player <span></span> wins!</div>
+      <p class="playerScores">Draw <span id="scoreDraw"></span></p>
+      <div id="dogMessage">Woof Woof!</div>
+      <div id="catMessage">Meow!</div>
       <div id="draw">Nobody wins!</div>
     </div>
 
@@ -61,8 +64,9 @@
       <section class="players">
         <h1>CAT</h1>
         <img src="img/CatImage1.jpg" class=playerPic id="catPic">
-        <p class="playerScores">Score: <span id="scoreO"></span></p>
-        <p class="playerScores">Draw = <span id="scoreDraw"></span></p>
+        <p class="playerScores">Score <span id="scoreO"></span></p>
+        <div id="winnerCat">Winner!</div>
+        <img src="img/CatBowl.jpg" class="tokens" id="catBowl">
       </section>
     </div>
 

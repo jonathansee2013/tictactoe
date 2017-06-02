@@ -48,40 +48,37 @@ $(document).ready( function () {
 
   $('#dogPic').click( function () {
     currentDogImageIndex += 1; // adds 1 to the index
-    if (currentDogImageIndex >= dogImages.length) { // until it reaches the last index
-      currentDogImageIndex = 0; // then goes back to first image
-    }
-    // currentDogImageIndex += 1;
-    // currentDogImageIndex = currentDogImageIndex % dogImages.length;
-
-    console.log("click dog: ", currentDogImageIndex);
+    currentDogImageIndex %= dogImages.length // updates to 2 until it reaches index 7 and goes back to index 0
     var urlDog = dogImages[currentDogImageIndex]; // sets the chosen dog image
-    $(this).attr('src', urlDog);
-  })
+    $(this).attr('src', urlDog); // displays the dog image
+  });
 
   $("#catPic").click( function () {
     currentCatImageIndex += 1;
-    if (currentCatImageIndex >= catImages.length) {
-      currentCatImageIndex = 0;
-    }
+    currentCatImageIndex %= catImages.length
     var urlCat = catImages[currentCatImageIndex];
     $(this).attr('src', urlCat);
   })
 
   var showWin = function (player) {
-    $('#winner span').text(player);
-    $('#winner').show();
+    if (player === "X") {
+      $('#winnerDog').css('visibility', 'visible');
+      $('#dogMessage').show();
+    } else {
+      $('#winnerCat').css('visibility', 'visible');
+      $('#catMessage').show();
+    }
   //  $('#playerOnePic').animate({width: '10%'}, 1000);
   }
 
   var checkWinState = function ( firstCell, secondCell, thirdCell, winSelect ) {
     if (firstCell.text().length && firstCell.text() === secondCell.text() && secondCell.text() === thirdCell.text()) {
-      $(winSelect).css('backgroundColor', '#D9BBF9');
+      $(winSelect).css('borderColor', 'red');
       gameOver = true;
       if (firstCell.text() === "X") {
         showWin("X");
-        scoreX += 1 ;    // scoreX++;
-        $('#scoreX').text(scoreX);
+        scoreX += 1 ;    // scoreX++; to keep score
+        $('#scoreX').text(scoreX); // to show score
       } else {
         showWin("O");
         scoreO += 1;
@@ -93,26 +90,23 @@ $(document).ready( function () {
     }
   };
 
-  // $('img').click( function () {
-  //   // $(this).
-  // })
-
   $('td').click( function () {
 
     if ( $( this ).text().length || gameOver ) { // If: (1) there is something ("X" or "O") in the box, prevents it from being clicked again; OR (2) game is over, prevents players from clicking or continuing with game.
       return;
     }
 
-    $( this ).html( playerTurn );
-    $( this ).addClass(playerTurn);
+    $( this ).html( playerTurn ); // shows the X or O (which has 0px)
+    $( this ).addClass(playerTurn); // shows the image corresponding to X and O
+    // $( this ).
 
-    numberOfTurns += 1;
+    numberOfTurns += 1; // adds 1 everytime a player takes turns
     if ( playerTurn === "X" ) { // if statement to alternate X and O
       playerTurn = "O";
     } else { // playerTurn !== "X"
       playerTurn = "X";
     }
-    //debugger;
+
     if ( checkWinState( $cellOne, $cellTwo, $cellThree, '.row.first td' ) ) {
       return;
     }
@@ -138,28 +132,23 @@ $(document).ready( function () {
       return;
     }
     else if ( numberOfTurns === 9) {
-      // no winning combo found, so check for draw
-
-      /* all boxes are occupied - how to check?
-         1. check length of each cell contents
-         2. check how many turns have been played
-      */
-      scoreDraw += 1;
-      $('#scoreDraw').text(scoreDraw);
-      $('#draw').show();
-
+      scoreDraw += 1; // adds 1 to DRAW score everytime there is draw
+      $('#scoreDraw').text(scoreDraw); // displays DRAW score
+      $('#draw').show() // displays "Nobody Wins" message
     }
 
   });
 
   $('#reset').click(function () {
-    $('td').text('');
-    $('td').css('backgroundColor', '');
-    playerTurn !== "X";
-    $('#winner,#draw').hide();
-    $('td').removeClass("X O");
-    numberOfTurns = 0;
-    gameOver = false;
+    $('td').text(''); // clears the X & O (which has 0px) from boxes
+    $('td').css('borderColor', ''); // removes the red color on border
+    playerTurn !== "X"; // starts with a different player every reset
+    $('#draw').hide(); // hides the "Nobody wins!" message
+    $('td').removeClass("X O"); // removes all images corresponding to X & 0
+    $('#winnerDog,#winnerCat').css('visibility', 'hidden'); // hides "Winner!" message
+    $('#dogMessage,#catMessage').hide();
+    numberOfTurns = 0; // resets number of turns to 0
+    gameOver = false; // resets game
   });
 
 });

@@ -20,18 +20,39 @@ header {
   font-weight: 600;
 }
 
+#versus {
+  text-transform: lowercase;
+}
+
 .X {
-  background-image: url(../img/DogBowl.jpg);
+  background-image: url(../img/DogFood.jpg);
   background-size: cover;
+  background-position-x: -1px
 }
 
 .O {
-  background-image: url(../img/DogFood.jpg);
+  background-image: url(../img/CatBowl.jpg);
   background-size: cover;
+  background-position-x: -1px
+}
+
+.maincontainer {
+  min-height: 80vh;
+}
+
+.column {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 33%;
+  vertical-align: top;
+}
+
+h1 {
+  font-size: 50px;
+  letter-spacing: 3px;
 }
 
 section {
-  /*background-color: #7871AA;*/
   color: black;
   text-align: center;
   width: auto;
@@ -42,35 +63,32 @@ section p {
   letter-spacing: 1px;
 }
 
-img.playerPic {
-  /*visibility: hidden;*/
-}
-
 img.playerPic:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
-.column {
-  display: inline-block;
-  box-sizing: border-box;
-  /*float:left;*/
-  width: 33%;
-  vertical-align: top;
-  border: 1px solid red;
+.playerScores {
+  font-size: 30px;
+  padding-top: 0px;
+}
+
+#winnerDog,#winnerCat {
+  visibility: hidden;
+  color: black;
+  font-size: 50px;
+}
+
+.tokens {
+  length: 200px;
+  width: 200px;
 }
 
 .board {
   margin-top: 30px;
 }
 
-h1 {
-  font-size: 50px;
-  letter-spacing: 3px;
- }
-
 table {
   margin: auto;
-  /*border-collapse: collapse;*/
 }
 
 td {
@@ -82,37 +100,37 @@ td {
   background-color: white;
 }
 
-td:hover {
-  background-color: #B3CBB9;
+td:not(.X):not(.O):hover {
+  background: url(../img/pawprint.jpg);
+  background-size: cover;
+  cursor: pointer;
 }
 
-#winner, #draw {
+#draw {
   display: none;
   color: black;
   font-size: 50px;
-  padding-top: 30px;
-}
-
-section {
-  color: black;
-}
-
-.playerScores {
-  font-size: 30px;
+  /*padding-top: 5px;*/
 }
 
 #reset {
-  font: 50px;
-  font-size: 30px;
-  color: black;
   background-color: white;
+  color: black;
+  font-size: 30px;
   width: 250px;
   margin: auto;
+  padding: 15px;
 }
 
 #reset:hover{
   cursor: pointer;
-  padding: 20px;
+  background-color: black;
+  color: white;
+}
+
+#dogMessage,#catMessage {
+  display: none;
+  font-size: 50px;
 }
 
 footer {
